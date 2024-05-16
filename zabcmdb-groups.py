@@ -1,9 +1,9 @@
 import requests
 
 # Configurações do Zabbix
-zabbix_url = 'https://zabbix.ultragaz.com.br/api_jsonrpc.php'
-zabbix_user = 'usercmdb'
-zabbix_password = 'MYGH#1!j6LfWYoiz84f5osch1FNtRqBImZ4'
+zabbix_url = 'https://zabbix-urlcom.br/api_jsonrpc.php'
+zabbix_user = 'user'
+zabbix_password = ''
 
 # Headers da requisição
 headers = {
@@ -105,7 +105,7 @@ auth_response = requests.post(zabbix_url, json=auth_data, headers=headers, verif
 if auth_response.status_code == 200:
     auth_token = auth_response.json().get('result')
     # IDs dos grupos de servidores desejados
-    group_ids = ["37", "40"]  # Substitua pelos IDs dos grupos desejados
+    group_ids = ["99", "98"]  # Substitua pelos IDs dos grupos desejados
     # Obter informações dos hosts para cada groupid
     get_hosts_info(auth_token, group_ids)
 else:
